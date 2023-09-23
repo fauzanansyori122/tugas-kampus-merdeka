@@ -31,6 +31,75 @@
             width: 200px;
             padding: 10px;
         }
+
+        .step {
+
+            padding: 10px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+
+            background-color: cream;
+        }
+
+        .v-stepper {
+            position: relative;
+            /*   visibility: visible; */
+        }
+
+        /* regular step */
+        .step .circle {
+            background-color: rgb(6, 150, 215);
+            border: 3px solid rgb(6, 150, 215);
+            border-radius: 100%;
+            width: 40px;
+            /* +6 for border */
+            height: 40px;
+            display: inline-block;
+        }
+
+        .step .line {
+            top: 28px;
+            left: 20px;
+            /*   height: 120px; */
+            height: 100%;
+
+            position: absolute;
+            border-left: 3px solid rgb(6, 150, 215);
+        }
+
+        .step.completed .circle {
+            visibility: visible;
+            background-color: rgb(6, 150, 215);
+            border-color: rgb(6, 150, 215);
+        }
+
+        .step.completed .line {
+            border-left: 3px solid rgb(6, 150, 215);
+        }
+
+        .step.active .circle {
+            visibility: visible;
+            border-color: rgb(6, 150, 215);
+        }
+
+        .step:last-child .line {
+            border-left: 3px solid white;
+            z-index: -1;
+            /* behind the circle to completely hide */
+        }
+
+        .content {
+            margin-left: 20px;
+            display: inline-block;
+        }
+
+
+        /* codepen override */
+        html * {
+            font-family: Arial !important;
+        }
     </style>
 </head>
 
@@ -43,7 +112,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll ms-5" style="--bs-scroll-height: 100px;">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                    style="--bs-scroll-height: 100px; margin-left: 240px;">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
@@ -64,7 +134,7 @@
                             <li><a class="dropdown-item" href="#">Webinar</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-left: 20px;">
                         <a class="nav-link" href="#">Hubungi Admin</a>
                     </li>
                 </ul>
@@ -91,22 +161,65 @@
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="display-6 pt-5"><b>Pelatihan & Penyaluran Kerja.</b></div>
                     <div class="mt-5" style="font-size: 20px; text-align: justify; padding-right: 7%;">
-                        <li style="margin: 0;"> <b>Daftar, Get Free Class!</b></li>
-                        <p>Join Komunitas belajar, dapatkan akeses kelas & materi gratis</p>
-                        <li style="margin: 0;"><b>Belajar Intensif</b></li>
-                        <p>Belajar didampingi virtual assistant & mentor expert via grup & 1-on-1 zoom mentoring</p>
-                        <li style="margin: 0;"><b>Penyaluran Kerja Dijamin</b></li>
-                        <p>Dapatkan pekerjaan dengan gaji s.d 10jt lebih</p>
-                        <a class="btn btn-first" href=""
-                            style="background-color: rgb(82, 80, 230); color: white;"><b>Daftar Gratis</b></a>
+                        <div class="container">
+                            <!-- completed -->
+                            <div class="step completed">
+                                <div class="v-stepper">
+                                    <div class="circle" style="text-align: center; padding-bottom: 30px;">1</div>
+                                    <div class="line"></div>
+                                </div>
+
+                                <div class="content">
+                                    <p style="margin: 0;"> <b>Daftar, Get Free Class!</b></p>
+                                    <p>Join Komunitas belajar, dapatkan akeses kelas & materi gratis</p>
+                                </div>
+                            </div>
+
+                            <!-- active -->
+                            <div class="step active">
+                                <div class="v-stepper">
+                                    <div class="circle" style="text-align: center; padding-bottom: 30px;">2</div>
+                                    <div class="line"></div>
+                                </div>
+
+                                <div class="content">
+                                    <p style="margin: 0;"><b>Belajar Intensif</b></p>
+                                    <p>Belajar didampingi virtual assistant & mentor expert via grup & 1-on-1 zoom
+                                        mentoring</p>
+                                </div>
+                            </div>
+
+                            <!-- regular -->
+                            <div class="step">
+                                <div class="v-stepper">
+                                    <div class="circle" style="text-align: center; padding-bottom: 30px;">3</div>
+                                    <div class="line"></div>
+                                </div>
+
+                                <div class="content">
+                                    <p style="margin: 0;"><b>Penyaluran Kerja Dijamin</b></p>
+                                    <p>Dapatkan pekerjaan dengan gaji s.d 10jt lebih</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary position-relative">
+                            <b>Daftar Gratis</b> 
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                Free
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </button>
                         <a class="btn btn-second" href=""
                             style="background-color: yellow; color: rgb(70, 63, 63);"><b>Konsultasi Dulu</b></a>
                         <p style="margin: 30px auto;">75,692 Students & 165 Mentors has joined!</p>
+
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <img src="ft.png" alt="">
-                    <div class="card" style="margin: 0 auto; padding-left: 20px;">
+                    <div class="card"
+                        style="margin: 0 auto; padding-left: 20px; position: relative; margin-top: -80px;">
                         <div class="card-body">
                             <p> <b>"Sebelumnya saya tidak punya background IT karena jurusan Kimia, setelah saya
                                     belajar coding di Eduwork, Saya berhasil diterima kerja di Tokopedia sebagai
