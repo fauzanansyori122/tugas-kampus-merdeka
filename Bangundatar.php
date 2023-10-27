@@ -1,0 +1,81 @@
+<?php 
+    echo "Bangun Datar<br>";
+    echo "=====================<br>";
+    $bd = "Persegi";
+    $rumus = "<br> Luas = Sisi x Sisi <br>
+                Keliling = 4 x Sisi ";
+    $contoh = "Misal panjang Sisi = 6 Maka, Luas dan Keliling?";   
+    echo "Bangun Datar $bd <br>";
+    echo "Rumus $rumus <br>" ;
+    echo " $contoh <br>";
+    $s = 6;
+    $l = $s * $s;
+    echo "$s * $s = $l <br>";
+    $k = 4 * $s;
+    echo " 4 * $s = $k <br>";
+    echo "=====================<br>";
+     $bd = "Persegi Panjang";
+    $rumus = "<br> Luas = Panjang x Lebar <br>
+                Keliling = 2 x Panjang + 2 x Lebar ";
+    $contoh = "Misal panjang = 8 dan Lebar = 4 Maka, Luas dan Keliling?";   
+    echo "Bangun Datar $bd <br>";
+    echo "Rumus $rumus <br>" ;
+    echo " $contoh <br>";
+    $p = 8;
+    $l = 4;
+    $lpp = $p * $l;
+    echo "$p * $l = $lpp <br>";
+    $k = 2 * $p + 2 * $l;
+    echo " 2 * $p + 2 * $l= $k <br>";
+    echo "=====================<br>";
+         $bd = "Segitiga";
+    $rumus = "<br> Luas = 1/2 x Alas x Tinggi <br>
+                Keliling = a + b + C ";
+    $contoh = "Misal segitiga a = 5 b = 8 c = 8 dan tinggi = 6 , Luas dan Keliling?";   
+    echo "Bangun Datar $bd <br>";
+    echo "Rumus $rumus <br>" ;
+    echo " $contoh <br>";
+    $a = 5;
+    $b = 8;
+    $c = 8;
+    $t = 6;
+    $ls = 1/2 * $a * $t;
+    echo "1/2 * $a * $t= $ls <br>";
+    $k = $a + $b + $c;
+    echo "$a + $b + $c= $k <br>";
+    echo "=====================<br>";
+     $bd = "Jajar Genjang";
+    $rumus = "<br> Luas =Alas x Tinggi <br>
+                Keliling = a + b + c + d";
+    $contoh = "Misal jajar genjang a = 10 b = 10 c = 8 d = 8 dan tinggi = 6 , Luas dan Keliling?";   
+    echo "Bangun Datar $bd <br>";
+    echo "Rumus $rumus <br>" ;
+    echo " $contoh <br>";
+    $a = 10;
+    $b = 10;
+    $c = 8;
+    $d = 8;
+    $t = 6;
+    $ljg = $a * $t;
+    echo " $a * $t= $ljg <br>";
+    $k = $a + $b + $c + $d;
+    echo "$a + $b + $c + $d= $k <br>";
+    echo "=====================<br>";
+         $bd = "Trapesium";
+    $rumus = "<br> Luas = a/2 + b/2 x Tinggi <br>
+                Keliling = a + b + c + d";
+    $contoh = "Misal trapesium a = 12 b = 10 c = 8 d = 8 dan tinggi = 7 , Luas dan Keliling?";   
+    echo "Bangun Datar $bd <br>";
+    echo "Rumus $rumus <br>" ;
+    echo " $contoh <br>";
+    $a = 12;
+    $b = 10;
+    $c = 8;
+    $d = 8;
+    $t = 7;
+    $lt = $a/2 + $b/2 * $t;
+    echo " $a/2 + $b/2 * $t= $lt <br>";
+    $k = $a + $b + $c + $d;
+    echo "$a + $b + $c + $d= $k <br>";
+    echo "=====================<br>";
+    ?>
